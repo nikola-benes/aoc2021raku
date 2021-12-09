@@ -10,7 +10,7 @@ say [×] do for ^2 -> $n {
 	my @s = @input;
 	loop (my $p = 0; @s.elems > 1; ++$p) {
 		my $m = @s»[$p].sum ≥ @s.elems / 2;
-		@s .= grep: *[$p] == $m +^ $n;
+		@s .= grep: *[$p] == $m ?^ $n;
 	}
 	I@s[0];
 }

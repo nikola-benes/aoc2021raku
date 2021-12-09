@@ -5,9 +5,10 @@
 - alternative notation for multiplication using `×`
   (might be good to avoid clash with other uses of `*`)
 * `loop` is C-like `for`
-* `+^` is the bit xor operation and was the only version of xor
-  that worked here
-  * `^` is a junction
-  * `^^` should be logical xor, but `True ^^ True` is `Nil`, not `False`
-    (and `Nil` cannot be compared to `False` using `==`) :-(
+* there are several xor(-like) operators:
+  - `?^` the boolean xor (the right one here!)
+  - `+^` the bit xor operation
+  * `^` is a junction: `a ^ b ^ c` is `one(a, b, c)`
+  * `^^` is a “short-circuiting xor”; once a second `True` is encountered
+    in `a ^^ b ^^ c ^^ ...`, the result is `Nil`
 * `do for` collects the last values in the cycle's body in a list
