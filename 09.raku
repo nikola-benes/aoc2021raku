@@ -21,8 +21,9 @@ say [×] gather for @lows {
 	%s.set: "$_";
 	while @q {
 		my $p = @q.shift;
+		my $t = tile($p);
 		for neighbours($p) {
-			if tile($_) < 9 && "$_" ∉ %s {
+			if $t < tile($_) < 9 && "$_" ∉ %s {
 				@q.push: $_;
 				%s.set: "$_";
 			}
