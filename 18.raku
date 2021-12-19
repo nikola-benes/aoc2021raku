@@ -70,7 +70,7 @@ sub infix:<T+>($t1, $t2) {
 sub magnitude($tree) {
 	$tree ~~ Int
 		?? $tree
-		!! 3 * magnitude($tree[0]) + 2 * magnitude($tree[1])
+		!! [+] (3, 2) Z* $tree.map: &magnitude
 }
 
 sub deepcopy(@a) { @a.deepmap: { my $ = $_ } }
